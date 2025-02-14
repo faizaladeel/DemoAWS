@@ -1,0 +1,28 @@
+create database bankmanagementsystem;
+
+show databases;
+
+use bankmanagementsystem;
+
+create table SignUp (Form_No varchar (20), Name varchar (20),  Father_Name varchar (20), DOB varchar (20), Gender varchar (20), Email varchar (30), Marital_Status varchar (20), Address varchar (40), City varchar (25), Province varchar (20), Phone_Number varchar (20));  
+
+show tables;
+
+select * from signup;
+
+create table SignUpTwo (Form_No varchar (20), Religion varchar (20),  Category varchar (20), Income varchar (20), Education varchar (20), Occupation varchar (30), PAN_No varchar (20), CNIC_No varchar (40), Senior_Citizen varchar (25), Existing_Account varchar (20));  
+
+select * from signuptwo;
+
+create table SignUpThree (Form_No varchar(20),  Account_Type varchar (40),  Card_Number varchar (25), PIN varchar (10), Facility varchar (20));  
+
+select * from signupthree;
+
+create table login (Form_No varchar(20), Card_Number varchar (25),PIN varchar (10));
+
+select * from login;
+
+create table bank(PIN varchar(10), Date varchar(50), Type varchar(20), Amount varchar(20));
+
+select * from Bank;
+

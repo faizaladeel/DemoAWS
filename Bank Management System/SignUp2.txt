@@ -1,0 +1,214 @@
+package bank.management.system;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class SignupTwo extends JFrame implements ActionListener {
+    
+    JTextField pan, cnic;
+    JButton next;
+    JRadioButton syes, sno, eyes, eno;
+    JComboBox religion, category, occupation, education, income;
+    String formno;
+    
+    SignupTwo(String formno) {
+        
+        this.formno = formno;
+        setTitle("NEW ACCOUNT APPLICATION FORM - PAGE 2");
+
+        setLayout(null);
+        
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel l14 = new JLabel(i3);
+        l14.setBounds(10, -10, 100, 120);
+        add(l14);
+        
+        JLabel additionalDetails =new JLabel("Page 2: Additional Details ");
+        additionalDetails.setFont(new Font ("Raleway", Font.BOLD,22 ));
+        additionalDetails.setBounds(290, 50, 400, 30);
+        add(additionalDetails);
+        
+        JLabel Religion =new JLabel("Religion:");
+        Religion.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Religion.setBounds(100, 120, 100, 30);
+        add(Religion);
+        
+        String valreligon[] = {"Muslim", "Christain", "Hindu", "Sikh", "Other"};
+        religion = new JComboBox(valreligon);
+        religion.setBounds(300,120,400,30);
+        religion.setBackground(Color.WHITE);
+        add(religion);
+        
+        JLabel Category =new JLabel("Category:");
+        Category.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Category.setBounds(100, 170, 200, 30);
+        add(Category);
+        
+        String valcategory[] = {"General", "Special","IBA","FDA","Other"};
+        category = new JComboBox(valcategory);
+        category.setBounds(300,170,400,30);
+        category.setBackground(Color.WHITE);
+        add(category);
+        
+        JLabel Income =new JLabel("Income:");
+        Income.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Income.setBounds(100, 220, 200, 30);
+        add(Income);
+        
+        String incomecategory[] = {"Null", "< 50,000","< 1,00,000","< 2,00,000","Upto 5,00,000"};
+        income = new JComboBox(incomecategory);
+        income.setBounds(300,220,400,30);
+        income.setBackground(Color.WHITE);
+        add(income);
+        
+        JLabel Education =new JLabel("Education");
+        Education.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Education.setBounds(100, 280, 200, 30);
+        add(Education);
+        
+        JLabel Qualification =new JLabel("Qualification:");
+        Qualification.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Qualification.setBounds(100, 305, 200, 30);
+        add(Qualification);
+        
+        String educationValues[] = {"Matric", "Intermediate","Undergraduate","Postgraduate","M.Phil", "PHD"};
+        education = new JComboBox(educationValues);
+        education.setBounds(300,295,400,30);
+        education.setBackground(Color.WHITE);
+        add(education);
+        
+        JLabel Occupation =new JLabel("Occupation:");
+        Occupation.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Occupation.setBounds(100, 370, 200, 30);
+        add(Occupation);
+        
+        String occupationValues[] = {"Salaried", "Self-Employed","Bussiness","Student","Retired", "Others"};
+        occupation = new JComboBox(occupationValues);
+        occupation.setBounds(300,370,400,30);
+        occupation.setBackground(Color.WHITE);
+        add(occupation);
+        
+        JLabel Pan =new JLabel("PAN Number:");
+        Pan.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Pan.setBounds(100, 420, 200, 30);
+        add(Pan);
+         
+        pan = new JTextField();
+        pan.setFont(new Font("Raleway",Font.BOLD,14));
+        pan.setBounds(300,420,400,30);
+        add(pan);
+        
+        JLabel CNIC =new JLabel("CNIC Number:");
+        CNIC.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        CNIC.setBounds(100, 470, 200, 30);
+        add(CNIC);
+        
+        cnic = new JTextField();
+        cnic.setFont(new Font("Raleway",Font.BOLD,14));
+        cnic.setBounds(300,470,400,30);
+        add(cnic);
+        
+        JLabel Senior =new JLabel("Senior Citizen:");
+        Senior.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Senior.setBounds(100, 520, 200, 30);
+        add(Senior);
+
+        syes = new JRadioButton("Yes");
+        syes.setBounds(300, 520, 100, 30);
+        syes.setBackground(Color.lightGray);
+        add(syes);
+       
+        sno = new JRadioButton("No");
+        sno.setBounds(450, 520, 100, 30);
+        sno.setBackground(Color.lightGray);
+        add(sno);
+        
+        
+        ButtonGroup maritalrgroup = new ButtonGroup();
+        maritalrgroup.add(syes);
+        maritalrgroup.add(sno);
+        
+        JLabel Existing =new JLabel("Existing Account:");
+        Existing.setFont(new Font ("Raleway", Font.BOLD,20 ));
+        Existing.setBounds(100, 570, 200, 30);
+        add(Existing);
+        
+        eyes = new JRadioButton("Yes");
+        eyes.setBounds(300, 570, 100, 30);
+        eyes.setBackground(Color.lightGray);
+        add(eyes);
+       
+        eno = new JRadioButton("No");
+        eno.setBounds(450, 570, 100, 30);
+        eno.setBackground(Color.lightGray);
+        add(eno);
+        
+        
+        ButtonGroup existing = new ButtonGroup();
+        existing.add(eyes);
+        existing.add(eno);
+        
+        next = new JButton("NEXT");
+        next.setBackground(Color.BLACK);
+        next.setForeground(Color.lightGray);
+        next.setFont(new Font("Raleway",Font.BOLD,14));
+        next.setBounds(620, 605, 80, 30);
+        next.addActionListener(this);
+        add(next);
+
+        
+        getContentPane().setBackground(Color.lightGray);
+        
+        setSize (850 ,690);
+        setLocation(250 , 1);
+        setVisible(true);
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        String Religion = (String) religion.getSelectedItem();
+        String Category = (String) category.getSelectedItem();
+        String Income = (String) income.getSelectedItem();
+        String Education = (String) education.getSelectedItem();
+        String Occupation = (String) occupation.getSelectedItem();
+        String Seniorcitizen = null;
+        if (syes.isSelected()) {
+               Seniorcitizen = "Yes";
+        } else if (sno.isSelected()) {
+               Seniorcitizen = "No";
+        }
+        String Existingaccount = null;
+        if (eyes.isSelected()) {
+               Existingaccount = "Yes";
+      } else if (eno.isSelected()) {
+               Existingaccount = "No";
+      }
+        
+        String Pan = pan.getText();
+        String Cnic = cnic.getText();
+        
+        try {
+            if (cnic.equals("")) {
+                  JOptionPane.showMessageDialog(null, "CNIC is Required");
+            } else {
+                Conn c = new Conn();
+                String query = "insert into SignUpTwo values ('"+formno+"', '"+Religion+"', '"+Category+"', '"+Income+"', '"+Education+"', '"+Occupation+"', '"+Pan+"', '"+Cnic+"', '"+Seniorcitizen+"', '"+Existingaccount+"')";
+                c.s.executeUpdate(query);
+                
+                setVisible(false);
+                new SignupThree(formno).setVisible(true);    
+            }
+                //SignupThree Object
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+                
+    }
+    public static void main (String []args) {
+        new SignupTwo("");
+    }
+    
+}
